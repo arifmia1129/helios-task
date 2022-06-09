@@ -1,0 +1,30 @@
+.container {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.header {
+    font-weight: 700;
+}
+
+.row-container .row:nth-child(3n+0) {
+    background-color: rgb(255, 225, 169);
+}
+
+@media screen and (max-width:767px) {
+    .container {
+        width: 95%;
+        margin: 0 auto;
+        font-size: x-small;
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (min-width:767px) and (max-width:1023px) {
+    .container {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+}

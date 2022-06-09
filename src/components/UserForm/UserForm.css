@@ -6,7 +6,7 @@ form {
     border-radius: 20px;
 }
 
-#form-title {
+#title {
     text-align: center;
     color: rgb(73, 194, 235);
 }
@@ -45,6 +45,14 @@ input[type=submit]:hover {
 }
 
 @media screen and (max-width:767px) {
+    form {
+        width: 90%;
+        border: none;
+        padding: 0;
+    }
+}
+
+@media screen and (min-width:767px) and (max-width:1023px) {
     form {
         width: 90%;
         border: none;
