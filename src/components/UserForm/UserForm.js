@@ -24,9 +24,9 @@ const UserForm = () => {
         <div>
             <form onSubmit={handleUserInfo}>
                 <h3 id='title'>User Info Collect Form</h3>
-                <label for="fname">Name</label>
+                <label htmlFor="fname">Name</label>
                 <input type="text" id="name" name="name" placeholder="Your name.." />
-                <label for="lname">Phone number</label>
+                <label htmlFor="lname">Phone number</label>
                 <input type="text" id="phone" name="phone" placeholder="Your phone number.." />
                 <p id='error-msg'><small>{error && error}</small></p>
                 <p id='success-msg'><small>{successMsg && successMsg}</small></p>

@@ -9,10 +9,10 @@ const User = ({ user }) => {
         navigate(`detail/${phone}`)
     }
     return (
-        <div class="row">
-            <div class="col">{name}</div>
-            <div class="col">{phone}</div>
-            <div id='btn' onClick={handleDetail} class="col">Detail</div>
+        <div className="row">
+            <div className="col">{name}</div>
+            <div className="col">{phone}</div>
+            <div id='btn' onClick={handleDetail} className="col">Detail</div>
         </div>
     );
 };

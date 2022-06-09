@@ -6,12 +6,12 @@ import "./UserInfoTable.css";
 const UserInfoTable = () => {
     const [users] = useUser();
     return (
-        <div class="container">
+        <div className="container">
             <h3 id='title'>Users information</h3>
-            <div class="row">
-                <div class="col header">Name</div>
-                <div class="col header">Phone</div>
-                <div class="col header">Action</div>
+            <div className="row">
+                <div className="col header">Name</div>
+                <div className="col header">Phone</div>
+                <div className="col header">Action</div>
             </div>
             <div className='row-container'>
                 {
