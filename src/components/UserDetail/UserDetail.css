@@ -1,0 +1,12 @@
+#user {
+    margin: 0 auto;
+    text-align: center;
+    border: 5px solid salmon;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.point {
+    font-weight: bold;
+}
