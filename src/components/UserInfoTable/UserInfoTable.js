@@ -26,37 +26,41 @@ const UserInfoTable = () => {
         }
     }
     return (
-        <div className="container">
-            <h3 className='title'>Users information</h3>
-            <div className="header-row">
-                <div className="col header">Name</div>
-                <div className="col header">Phone</div>
-                <div className="col header">Action</div>
-            </div>
-            <div className='row-container'>
-                {
-                    allUser?.map((user, index) => <User
-                        key={index}
-                        user={user}
-                        setUsers={setUsers}
-                        setAllUser={setAllUser}
-                    />)
-                }
-            </div>
-            <div className='footer'>
-                <div>{(currentPage * 5) + 1}-{5 * (currentPage + 1)} of {users?.length}</div>
-                <div>
-                    <div className=''>
-                        <button className='footer-icon' onClick={handleDecreasePage}>
-                            <MdOutlineKeyboardArrowLeft />
-                        </button>
-                        <button className='footer-icon' onClick={handleIncreasePage}>
-                            <MdOutlineKeyboardArrowRight />
-                        </button>
+        <>
+            {
+                (users.length > 0) && <div className="container">
+                    <h3 className='title'>Users information</h3>
+                    <div className="header-row">
+                        <div className="col header">Name</div>
+                        <div className="col header">Phone</div>
+                        <div className="col header">Action</div>
+                    </div>
+                    <div className='row-container'>
+                        {
+                            allUser?.map((user, index) => <User
+                                key={index}
+                                user={user}
+                                setUsers={setUsers}
+                                setAllUser={setAllUser}
+                            />)
+                        }
+                    </div>
+                    <div className='footer'>
+                        <div>{(currentPage * 5) + 1}-{5 * (currentPage + 1)} of {users?.length}</div>
+                        <div>
+                            <div className=''>
+                                <button className='footer-icon' onClick={handleDecreasePage}>
+                                    <MdOutlineKeyboardArrowLeft />
+                                </button>
+                                <button className='footer-icon' onClick={handleIncreasePage}>
+                                    <MdOutlineKeyboardArrowRight />
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            }
+        </>
     );
 };
 
