@@ -1,9 +1,9 @@
 .container {
     width: 50%;
-    margin: auto;
+    margin: 0 auto;
     margin-bottom: 50px;
     background-color: rgb(224, 222, 222, .5);
-    padding: 10px 20px;
+    padding: 20px;
     border-radius: 10px;
 }
 

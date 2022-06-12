@@ -27,3 +27,23 @@
     padding: 2px;
     border-radius: 50%;
 }
+
+.editForm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    margin: 0;
+}
+
+.editForm input {
+    width: 100%;
+}
+
+.editForm input[type=submit] {
+    width: 30px;
+    height: 20px;
+    font-size: x-small;
+    padding: 2px;
+    margin: 0 0 0 5px;
+}

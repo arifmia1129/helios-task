@@ -38,6 +38,7 @@ const UserInfoTable = () => {
                     allUser?.map((user, index) => <User
                         key={index}
                         user={user}
+                        setUsers={setUsers}
                     />)
                 }
             </div>
