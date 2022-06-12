@@ -27,6 +27,21 @@ const updateDb = (phone, name) => {
     user.name = name;
     localStorage.setItem("users-info", JSON.stringify(users));
 }
+const deleteDb = (phone) => {
+    let users = [];
+
+    const stored = localStorage.getItem("users-info");
+
+    if (stored) {
+        users = JSON.parse(stored);
+    }
+    else {
+        users = [];
+    }
+    const user = users.find(u => u.phone === phone);
+    users.pop(user);
+    localStorage.setItem("users-info", JSON.stringify(users));
+}
 
 const storedDetails = () => {
     let users = [];
@@ -38,4 +53,4 @@ const storedDetails = () => {
     return users;
 }
 
-export { addDb, storedDetails, updateDb };
+export { addDb, storedDetails, updateDb, deleteDb };

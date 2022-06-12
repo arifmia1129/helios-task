@@ -4,7 +4,8 @@ import "./User.css";
 import { AiFillEdit } from 'react-icons/ai';
 import { MdDelete } from 'react-icons/md';
 import { TbDetails } from 'react-icons/tb';
-import { storedDetails, updateDb } from '../utilities/fakeDB';
+import { deleteDb, storedDetails, updateDb } from '../utilities/fakeDB';
+import { toast } from 'react-toastify';
 
 const User = ({ user, setUsers }) => {
     const [editStatus, setEditStatus] = useState(false);
@@ -23,6 +24,12 @@ const User = ({ user, setUsers }) => {
         updateDb(phone, name);
         setUsers(storedDetails());
         setEditStatus(false);
+        toast.success("Update operation success!");
+    }
+    const handleDelete = () => {
+        deleteDb(phone);
+        setUsers(storedDetails());
+        toast.success("Delete operation success!");
     }
     return (
         <div className="row">
@@ -38,7 +45,7 @@ const User = ({ user, setUsers }) => {
             <div className="col">{phone}</div>
             <div id='btn' className="col">
                 <AiFillEdit onClick={handleEditStatus} className='icon' />
-                <MdDelete className='icon' />
+                <MdDelete onClick={handleDelete} className='icon' />
                 <TbDetails onClick={handleDetail} className='icon' />
             </div>
         </div>
