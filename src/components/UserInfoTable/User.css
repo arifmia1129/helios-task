@@ -2,11 +2,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px rgb(255, 255, 255);
+    ;
 }
 
 .col {
     width: 100%;
-    border: 2px solid gray;
     text-align: center;
     padding: 5px 0;
 }

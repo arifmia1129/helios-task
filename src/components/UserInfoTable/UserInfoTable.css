@@ -2,6 +2,15 @@
     width: 50%;
     margin: auto;
     margin-bottom: 50px;
+    background-color: rgb(224, 222, 222, .5);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.header-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header {

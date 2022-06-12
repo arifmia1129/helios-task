@@ -32,7 +32,7 @@ const UserForm = () => {
     return (
         <div>
             <form onSubmit={handleUserInfo}>
-                <h3 id='title'>User Info Collect Form</h3>
+                <h3 class='title'>User Info Collect Form</h3>
                 <label htmlFor="fname">Name</label>
                 <input type="text" id="name" name="name" placeholder="Your name.." />
                 <label htmlFor="lname">Phone number</label>

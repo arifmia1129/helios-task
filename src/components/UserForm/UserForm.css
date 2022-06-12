@@ -6,9 +6,9 @@ form {
     border-radius: 20px;
 }
 
-#title {
+.title {
     text-align: center;
-    color: rgb(73, 194, 235);
+    color: rgb(16, 182, 238);
 }
 
 input[type=text] {
