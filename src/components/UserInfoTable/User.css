@@ -18,4 +18,12 @@
 
 #btn {
     cursor: pointer;
+    margin: 0 auto;
+}
+
+.icon {
+    margin: 0 10px;
+    border: 1px solid salmon;
+    padding: 2px;
+    border-radius: 50%;
 }
