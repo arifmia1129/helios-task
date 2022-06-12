@@ -1,10 +1,10 @@
-import React from 'react';
-import useUser from '../../hooks/useUser';
+import React, { useContext } from 'react';
+import { UsersContext } from '../Main/Main';
 import User from './User';
 import "./UserInfoTable.css";
 
 const UserInfoTable = () => {
-    const [users] = useUser();
+    const [users, setUsers] = useContext(UsersContext);
     return (
         <div className="container">
             <h3 id='title'>Users information</h3>

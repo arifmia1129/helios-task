@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
-import addDb from '../utilities/fakeDB';
+import React, { useContext, useEffect, useState } from 'react';
+import { UsersContext } from '../Main/Main';
+import { addDb, storedDetails } from '../utilities/fakeDB';
 import "./UserForm.css";
 const UserForm = () => {
+    const [users, setUsers] = useContext(UsersContext);
     const [error, setError] = useState("");
     const [successMsg, setSuccessMsg] = useState("");
+    const [user, setUser] = useState();
     const handleUserInfo = e => {
         e.preventDefault();
         setError("");
@@ -12,7 +15,7 @@ const UserForm = () => {
         const phone = e.target.phone.value;
         if (/^\+?(8801)[3456789][0-9]{8}$/.test(phone)) {
             const user = { name, phone };
-            addDb(user);
+            setUser(user);
             e.target.reset();
             setSuccessMsg("Your information successfully saved!")
         }
@@ -20,6 +23,12 @@ const UserForm = () => {
             setError("Invalid phone number. Please try with country code.")
         }
     }
+    useEffect(() => {
+        if (user) {
+            addDb(user);
+            setUsers(storedDetails())
+        }
+    }, [user, setUsers])
     return (
         <div>
             <form onSubmit={handleUserInfo}>

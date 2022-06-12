@@ -8,7 +8,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Main />}></Route>
-        <Route path="/detail/:phone" element={<UserDetail />}></Route>
+        {/* <Route path="/detail/:phone" element={<UserDetail />}></Route> */}
       </Routes>
     </div>
   );

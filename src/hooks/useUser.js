@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
+import { storedDetails } from '../components/utilities/fakeDB';
 
 const useUser = () => {
-    const [users, setUsers] = useState();
+    const [users, setUsers] = useState(storedDetails());
     useEffect(() => {
-        setUsers(JSON.parse(localStorage.getItem("users-info")));
-    }, [users])
+        setUsers(storedDetails());
+    }, [])
     return [users];
 }
 

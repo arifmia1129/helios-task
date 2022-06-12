@@ -13,4 +13,14 @@ const addDb = (user) => {
     localStorage.setItem("users-info", JSON.stringify(users));
 }
 
-export default addDb;
+const storedDetails = () => {
+    let users = [];
+
+    const stored = localStorage.getItem("users-info");
+    if (stored) {
+        users = JSON.parse(stored);
+    }
+    return users;
+}
+
+export { addDb, storedDetails };
