@@ -46,10 +46,16 @@ const UserForm = () => {
         setError("");
         setSuccessMsg("");
         if (name && phone) {
-            const user = { name, phone };
-            setUser(user);
-            e.target.reset();
-            setSuccessMsg("Your information successfully saved!")
+            const existUser = users.find(u => u.phone === phone);
+            if (!existUser) {
+                const user = { name, phone };
+                setUser(user);
+                e.target.reset();
+                setSuccessMsg("Your information successfully saved!")
+            }
+            else {
+                setError("This phone number already added. Please try with another phone number.")
+            }
         }
         else {
             setError("Name or Phone field is empty.")
