@@ -42,6 +42,9 @@ const deleteDb = (phone) => {
     users.pop(user);
     localStorage.setItem("users-info", JSON.stringify(users));
 }
+const removeDb = () => {
+    localStorage.removeItem("users-info");
+}
 
 const storedDetails = () => {
     let users = [];
@@ -53,4 +56,4 @@ const storedDetails = () => {
     return users;
 }
 
-export { addDb, storedDetails, updateDb, deleteDb };
+export { addDb, storedDetails, updateDb, deleteDb, removeDb };

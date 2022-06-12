@@ -4,10 +4,10 @@ import "./User.css";
 import { AiFillEdit } from 'react-icons/ai';
 import { MdDelete } from 'react-icons/md';
 import { TbDetails } from 'react-icons/tb';
-import { deleteDb, storedDetails, updateDb } from '../utilities/fakeDB';
+import { deleteDb, removeDb, storedDetails, updateDb } from '../utilities/fakeDB';
 import { toast } from 'react-toastify';
 
-const User = ({ user, setUsers }) => {
+const User = ({ user, setUsers, setAllUser }) => {
     const [editStatus, setEditStatus] = useState(false);
     const nameRef = useRef();
     const navigate = useNavigate();
@@ -28,6 +28,12 @@ const User = ({ user, setUsers }) => {
     }
     const handleDelete = () => {
         deleteDb(phone);
+        const users = storedDetails();
+        if (users.length === 0) {
+            removeDb();
+            setAllUser([]);
+            setUsers(storedDetails());
+        }
         setUsers(storedDetails());
         toast.success("Delete operation success!");
     }

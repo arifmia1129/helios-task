@@ -27,7 +27,7 @@ const UserInfoTable = () => {
     }
     return (
         <div className="container">
-            <h3 class='title'>Users information</h3>
+            <h3 className='title'>Users information</h3>
             <div className="header-row">
                 <div className="col header">Name</div>
                 <div className="col header">Phone</div>
@@ -39,6 +39,7 @@ const UserInfoTable = () => {
                         key={index}
                         user={user}
                         setUsers={setUsers}
+                        setAllUser={setAllUser}
                     />)
                 }
             </div>

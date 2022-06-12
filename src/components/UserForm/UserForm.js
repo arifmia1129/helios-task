@@ -13,7 +13,12 @@ const UserForm = () => {
     const [user, setUser] = useState();
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
+    const [validPhone, setValidPhone] = useState(false);
+    const [validName, setValidName] = useState(false);
+
     useEffect(() => {
+        setError("");
+        setSuccessMsg("");
         if (phone.length === 0) {
             setPSuccess("");
             setPError("Empty field.")
@@ -23,20 +28,24 @@ const UserForm = () => {
             setPError("Invalid phone number. Please try with country code.")
         }
         else {
+            setValidPhone(true);
             setPError("");
             setPSuccess("Valid phone number.");
         }
     }, [phone])
     useEffect(() => {
+        setError("");
+        setSuccessMsg("");
         if (name.length === 0) {
             setNSuccess("");
             setNError("Empty field.")
         }
         else if ((name.length > 30)) {
             setNSuccess("");
-            setNError("Max length is 20 character.")
+            setNError("Max length is 30 character.")
         }
         else {
+            setValidName(true);
             setNError("");
             setNSuccess("Valid Name");
         }
@@ -45,7 +54,7 @@ const UserForm = () => {
         e.preventDefault();
         setError("");
         setSuccessMsg("");
-        if (name && phone) {
+        if (validName && validPhone) {
             const existUser = users.find(u => u.phone === phone);
             if (!existUser) {
                 const user = { name, phone };
@@ -58,7 +67,7 @@ const UserForm = () => {
             }
         }
         else {
-            setError("Name or Phone field is empty.")
+            setError("Name or Phone field is empty or invalid.")
         }
         setPError("");
         setNError("");
@@ -74,7 +83,7 @@ const UserForm = () => {
     return (
         <div>
             <form onSubmit={handleUserInfo}>
-                <h3 class='title'>User Info Collect Form</h3>
+                <h3 className='title'>User Info Collect Form</h3>
                 <label htmlFor="fname">Name</label>
                 <input onChange={(e) => setName(e?.target?.value)} type="text" id="name" name="name" placeholder="Your name.." />
                 <p id='error-msg'><small>{nError && nError}</small></p>
